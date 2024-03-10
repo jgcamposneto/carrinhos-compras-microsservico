@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(of = "id")
-public class Pedido {
+public class CarrinhoDeCompras {
 
 	 @Id
 	 @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +31,7 @@ public class Pedido {
 	 
 	 private UUID idUsuario;
 	 
-	 @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+	 @OneToMany(mappedBy = "carrinho", cascade = CascadeType.ALL, orphanRemoval = true)
 	 private Set<ItemPedido> itens = new HashSet<>();
 	 
 	 private BigDecimal valorTotal;

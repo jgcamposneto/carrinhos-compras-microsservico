@@ -31,7 +31,7 @@ public class ItemPedido {
 	private Long idProduto;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_pedido")
-	private Pedido pedido;
+	@JoinColumn(name = "id_carrinhos")
+	private CarrinhoDeCompras carrinho;
 	
 }
