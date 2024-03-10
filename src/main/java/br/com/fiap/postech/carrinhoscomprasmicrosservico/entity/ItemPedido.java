@@ -1,7 +1,5 @@
 package br.com.fiap.postech.carrinhoscomprasmicrosservico.entity;
 
-import java.math.BigDecimal;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,12 +24,12 @@ public class ItemPedido {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	private BigDecimal quantidade;
+	private int quantidade;
 	
 	private Long idProduto;
 	
 	@ManyToOne
-	@JoinColumn(name = "id_carrinhos")
+	@JoinColumn(name = "id_carrinho")
 	private CarrinhoDeCompras carrinho;
 	
 }
