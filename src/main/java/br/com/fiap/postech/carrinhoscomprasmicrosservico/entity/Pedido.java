@@ -1,13 +1,16 @@
 package br.com.fiap.postech.carrinhoscomprasmicrosservico.entity;
 
 import java.math.BigDecimal;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,7 +31,8 @@ public class Pedido {
 	 
 	 private UUID idUsuario;
 	 
-	 private List<ItemPedido> itens;
+	 @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL, orphanRemoval = true)
+	 private Set<ItemPedido> itens = new HashSet<>();
 	 
 	 private BigDecimal valorTotal;
 	
