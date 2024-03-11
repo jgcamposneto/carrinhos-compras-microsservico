@@ -1,9 +1,7 @@
 package br.com.fiap.postech.carrinhoscomprasmicrosservico.entity;
 
 import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -32,7 +30,7 @@ public class CarrinhoDeCompras {
 	 private UUID idUsuario;
 	 
 	 @OneToMany(mappedBy = "carrinho", cascade = CascadeType.ALL, orphanRemoval = true)
-	 private Set<ItemPedido> itens = new HashSet<>();
+	 private List<ItemPedido> itens = new ArrayList<>();
 	 
 	 private BigDecimal valorTotal;
 	

@@ -1,6 +1,7 @@
 package br.com.fiap.postech.carrinhoscomprasmicrosservico.service;
 
 import java.io.IOException;
+import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
@@ -40,7 +41,7 @@ public class CarrinhoDeComprasService {
 		return carrinhosDeComprasRepository.save(carrinho);
 	}
 	
-	private boolean verificarDisponibilidadeProdutos(Set<ItemPedido> itens) {
+	private boolean verificarDisponibilidadeProdutos(List<ItemPedido> itens) {
 		
 		for (ItemPedido item : itens) {
 			
